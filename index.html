@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule34 API Ergebnisse</title>
+    <style>
+.montserrat-300 {
+  font-family: "Montserrat", sans-serif;
+ 
+  font-weight: 300;
+  font-style: normal;
+}
+.montserrat-600 {
+  font-family: "Montserrat", sans-serif;
+ 
+  font-weight: 600;
+  font-style: normal;
+}
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: white;
+        }
+        .result {
+            display: inline-block;
+            vertical-align: top;
+            
+            height: 40vh;
+            width:auto;
+        }
+        #results {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            height: 40vh;
+        }
+        img {
+            height: 40vh;
+            width:auto;
+            display: block;
+            margin-left: 10px;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        
+        .searchboxborder{
+            width: 90%;
+            margin: 5%;
+            background: #fff;
+            height: 40%;
+            padding: 5px;
+            overflow: hidden;
+            position: relative;
+            
+            justify-content: center;
+            align-content: center;
+        }
+        body {
+           
+        }
+        #searchTags,#limit,#page{
+            background: transparent;
+            border-color: white;
+            position: absolute;
+            border-style: none;
+            border-bottom-style: solid;
+            border-bottom-width: 2px;
+            color:white;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            height: 5vh;
+            width: 50%;
+        }
+        #sbutton{
+            background: #fff;
+            border-color: white;
+            position: absolute;
+            
+            color:#333333;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            height: 5vh;
+            margin-left:5vh;
+            margin-top: 21vh ;
+            border-style: none;
+            border-radius: 10px;
+            height: 10vh;
+            width: 20%;
+        }
+        #searchTags{
+            margin-left: 5vh;
+            margin-top: 7vh;
+            
+        }
+        #limit {
+            margin-left: 5vh;
+            margin-top: 14vh;
+        }
+          
+
+        .searchboxborder {
+            
+            
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, purple, magenta , cyan, magenta , purple);
+            background-size: 400%;
+            border-radius: 10px;
+            z-index: 0;
+            animation: rotate 20s linear infinite;
+        }
+
+        .searchbox {
+            background-color: #333333;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            border-radius:10px;
+            z-index: 2;
+        }
+        #resultframe{
+            width: 90%;
+            height: 50vh;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            margin: 5%;
+            background-color: #333333;
+            border-radius: 10px;
+        }
+        @keyframes rotate {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 400% 50%;
+            }
+        }
+        
+        h3 {
+            margin:10px;
+            font-family: "Montserrat", sans-serif;
+             color: white;
+  font-weight: 500;
+  font-style: normal;
+  z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="searchboxborder">
+    <div class="searchbox">
+        <h3>Search R34 Posts</h3><br>
+    <input type="text" id="searchTags" class="montserrat-600" placeholder="Enter Tag">
+    <input type="number" id="limit" class="montserrat-600" placeholder="Picture Limit" min="1" max="1000" value="10">
+    
+    <button onclick="searchRule34('results')" id="sbutton"class="montserrat-600">Search R34 Network</button>
+    </div>
+    </div>
+
+    <div id="resultframe">
+        <h3>Results on Tag(s)</h3>
+        <div id="results"></div></div>
+    <div id="error"></div>
+
+    <script src="bath.js"></script>
+        
+
+</body>
+</html>
