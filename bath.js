@@ -7,7 +7,7 @@ function searchRule34(divname) {
             console.log(limit);
             //const page = document.getElementById('page').value;
             const page = 0;
-            const url = `https://api.rule34.xxx/index.php?page=dapi&s=post&q=index&tags=${encodeURIComponent(tags)}&limit=${limit}&pid=${page}&json=1`;
+
 
             fetch(url)
                 .then(response => {
